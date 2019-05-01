@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Load the secret key from passwords.json
-passwords_file = open(
-    BASE_DIR + '/traversy_django_crash_course/passwords.json')
-passwords_json = passwords_file.read()
-passwords = json.loads(passwords_json)
-SECRET_KEY = passwords['SECRET_KEY']
+secrets_file = open(
+    BASE_DIR + '/traversy_django_crash_course/secrets.json')
+secrets_json = secrets_file.read()
+secrets = json.loads(secrets_json)
+SECRET_KEY = secrets['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,10 +79,22 @@ WSGI_APPLICATION = 'traversy_django_crash_course.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = ***REMOVED***
+#     'default': ***REMOVED***
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     ***REMOVED***
+# ***REMOVED***
+
 DATABASES = ***REMOVED***
     'default': ***REMOVED***
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': secrets['DATABASE_NAME'],
+        'USER': secrets['DATABASE_USER'],
+        'PASSWORD': secrets['DATABASE_PASSWORD'],
+        'HOST': 'localhost',
+        # Port number is default SQL port no if left blank
+        'PORT': ''
     ***REMOVED***
 ***REMOVED***
 
