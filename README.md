@@ -8,12 +8,12 @@ To run this app, first clone the repo. Create a virtual environment for the proj
 ### Secret Key
 The application expects a file named `secrets.json` in the project directory (same level as `settings.py`). The file should have this format:
 ```
-***REMOVED***
+{
   "SECRET_KEY": "your_secret_key_here",
   "DATABASE_NAME": "your_database_name_here",
   "DATABASE_USER": "your_database_username_here",
   "DATABASE_PASSWORD": "your_database_password_here"
-***REMOVED***
+}
 ```
 Replace `your_secret_key_here` and all other pertinent strings with the pertinent information, of course. Need to generate a secret key? Run this simple Python script (it's how Django generates the key to begin with). 
 ```

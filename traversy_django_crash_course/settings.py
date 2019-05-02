@@ -59,19 +59,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'traversy_django_crash_course.urls'
 
 TEMPLATES = [
-    ***REMOVED***
+    {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
-        'OPTIONS': ***REMOVED***
+        'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-        ***REMOVED***,
-    ***REMOVED***,
+        },
+    },
 ]
 
 WSGI_APPLICATION = 'traversy_django_crash_course.wsgi.application'
@@ -80,15 +80,15 @@ WSGI_APPLICATION = 'traversy_django_crash_course.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = ***REMOVED***
-#     'default': ***REMOVED***
+# DATABASES = {
+#     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     ***REMOVED***
-# ***REMOVED***
+#     }
+# }
 
-DATABASES = ***REMOVED***
-    'default': ***REMOVED***
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': secrets['DATABASE_NAME'],
         'USER': secrets['DATABASE_USER'],
@@ -96,26 +96,26 @@ DATABASES = ***REMOVED***
         'HOST': 'localhost',
         # Port number is default SQL port no if left blank
         'PORT': ''
-    ***REMOVED***
-***REMOVED***
+    }
+}
 
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    ***REMOVED***
+    {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    ***REMOVED***,
-    ***REMOVED***
+    },
+    {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    ***REMOVED***,
-    ***REMOVED***
+    },
+    {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    ***REMOVED***,
-    ***REMOVED***
+    },
+    {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    ***REMOVED***,
+    },
 ]
 
 

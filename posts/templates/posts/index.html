@@ -1,10 +1,10 @@
-***REMOVED***% extends 'posts/layout.html' %***REMOVED***
+{% extends 'posts/layout.html' %}
 
-***REMOVED***% block content %***REMOVED***
-<h3 class="center-align red lighten-3">***REMOVED******REMOVED*** title ***REMOVED******REMOVED***</h3>
+{% block content %}
+<h3 class="center-align red lighten-3">{{ title }}</h3>
 <ul class="collection">
-  ***REMOVED***% for post in posts %***REMOVED***
-  <li class="collection-item"><a href="/posts/details/***REMOVED******REMOVED***post.id***REMOVED******REMOVED***">***REMOVED******REMOVED***post.title***REMOVED******REMOVED***</a></li>
-  ***REMOVED***% endfor %***REMOVED***
+  {% for post in posts %}
+  <li class="collection-item"><a href="/posts/details/{{post.id}}">{{post.title}}</a></li>
+  {% endfor %}
 </ul>
-***REMOVED***% endblock %***REMOVED***
+{% endblock %}
